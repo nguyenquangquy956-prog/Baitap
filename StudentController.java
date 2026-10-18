@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class StudentController {
     private ArrayList<Student> studentList;
     private Scanner scanner = new Scanner(System.in);
+    
     public void function(){
         System.out.println("==================================================");
         System.out.println("        HỆ THỐNG QUẢN LÝ SINH VIÊN");
@@ -55,7 +56,6 @@ public class StudentController {
             if (student.getFullName().toLowerCase().contains(keyword)) {
                 System.out.println("Thông tin cần tìm: ");
                 student.displayData();
-                scanner.nextLine();
                 found = true;
                 break;
             }
@@ -63,6 +63,8 @@ public class StudentController {
         if (!found) {
             System.out.println("Không tìm thấy sinh viên phù hợp.");
         }
+        System.out.println("Nhấn Enter để tiếp tục!");
+        scanner.nextLine();
     }
     public void updateStudentGpa() {
         System.out.print("Nhập id cần tìm: ");
@@ -74,11 +76,14 @@ public class StudentController {
                 double newGpa = Double.parseDouble(scanner.nextLine().trim());
                 student.setGpa(newGpa);
                 System.out.println("Đã cập nhật GPA.");
+                System.out.println("Nhấn Enter để tiếp tục!");
                 scanner.nextLine();
                 return;
             }
         }
         System.out.println("Không tìm thấy sinh viên có id " + id + ".");
+        System.out.println("Nhấn Enter để tiếp tục!");
+        scanner.nextLine();
     }
     public void deleteStudent(){
         System.out.print("Nhập id cần tìm: ");
@@ -89,18 +94,19 @@ public class StudentController {
                 boolean remove = studentList.removeIf(sv -> sv.getId() == id);
                 if(remove){
                     System.out.println("Id " + id + " đã bị xóa khỏi danh sách thành công.");
-                    scanner.nextLine();
                     break;
                 }
             }
         }
+        System.out.println("Nhấn Enter để tiếp tục!");
+        scanner.nextLine();
     }
     public void sortStudentsByGpaDescending(){
         studentList.sort((s1,s2) -> Integer.compare(s1.getId(), s2.getId()));
         for(Student student : studentList){
             student.displayData();
+            System.out.println("Nhấn Enter để tiếp tục!");
             scanner.nextLine();
-            break;
         }
     }
     public StudentController() {
