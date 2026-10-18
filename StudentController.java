@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class StudentController {
     private ArrayList<Student> studentList;
     private Scanner scanner = new Scanner(System.in);
-    
     public void function(){
         System.out.println("==================================================");
         System.out.println("        HỆ THỐNG QUẢN LÝ SINH VIÊN");
@@ -45,6 +44,8 @@ public class StudentController {
         for (Student student : studentList) {
             student.displayData();
         }
+        System.out.println("Nhấn Enter để tiếp tục!");
+        scanner.nextLine();
     }
     public void searchStudentByName() {
         System.out.print("Nhập tên cần tìm: ");
