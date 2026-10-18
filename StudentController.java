@@ -101,7 +101,7 @@ public class StudentController {
         scanner.nextLine();
     }
     public void sortStudentsByGpaDescending(){
-        studentList.sort((s1,s2) -> Double.compare(s1.getGpa(), s2.getGpa()));
+        studentList.sort((s1,s2) -> Double.compare(s2.getGpa(), s1.getGpa()));
         for(Student student : studentList){
             student.displayData();
         }
