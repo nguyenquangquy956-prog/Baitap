@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class StudentController {
     private ArrayList<Student> studentList;
     private Scanner scanner = new Scanner(System.in);
-    
     public void function(){
         System.out.println("==================================================");
         System.out.println("        HỆ THỐNG QUẢN LÝ SINH VIÊN");
