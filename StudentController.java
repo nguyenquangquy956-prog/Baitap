@@ -57,6 +57,7 @@ public class StudentController {
                 student.displayData();
                 scanner.nextLine();
                 found = true;
+                break;
             }
         }
         if (!found) {
