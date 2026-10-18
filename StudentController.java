@@ -1,7 +1,7 @@
 package Baitap;
-import java.lang.classfile.constantpool.IntegerEntry;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Comparator;
 public class StudentController {
     private ArrayList<Student> studentList;
     private Scanner scanner = new Scanner(System.in);
@@ -101,12 +101,12 @@ public class StudentController {
         scanner.nextLine();
     }
     public void sortStudentsByGpaDescending(){
-        studentList.sort((s1,s2) -> Integer.compare(s1.getId(), s2.getId()));
+        studentList.sort((s1,s2) -> Double.compare(s1.getGpa(), s2.getGpa()));
         for(Student student : studentList){
             student.displayData();
-            System.out.println("Nhấn Enter để tiếp tục!");
-            scanner.nextLine();
         }
+        System.out.println("Nhấn Enter để tiếp tục!");
+        scanner.nextLine();
     }
     public StudentController() {
         studentList = new ArrayList<>();
